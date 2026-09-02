@@ -14,8 +14,18 @@ public class UsuarioLojaService {
 
 
 
-//    public UsuarioLoja cadastrar(CadastroUsuarioLojaDto req){
-//
-//
-//    }
+    public UsuarioLoja cadastrar(CadastroUsuarioLojaDto req){
+        if (repository.existsByEmail(req.getEmail())){
+            throw new RuntimeException("Já está cadastrado");
+        }
+
+        UsuarioLoja usuario = new UsuarioLoja();
+
+        usuario.setEmail(req.getEmail());
+        usuario.setSenha(req.getSenha());
+        usuario.setRoleUser(req.getRoleUser());
+
+        return repository.save(usuario);
+
+    }
 }

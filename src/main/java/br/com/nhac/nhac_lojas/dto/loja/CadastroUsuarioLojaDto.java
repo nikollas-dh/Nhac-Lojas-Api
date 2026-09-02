@@ -4,7 +4,10 @@ import br.com.nhac.nhac_lojas.model.loja.RoleUser;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.Getter;
 
+
+@Getter
 public class CadastroUsuarioLojaDto {
 
     @NotBlank(message = "Email é obrigatório")
