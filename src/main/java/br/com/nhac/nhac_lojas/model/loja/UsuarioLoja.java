@@ -15,7 +15,9 @@ import lombok.*;
 public class UsuarioLoja {
     @Id
     private String id;
+    private  String nome;
     private  String email;
+    private  String telefone;
     private  String senha;
     private  String idLoja;
     private  RoleUser roleUser;
