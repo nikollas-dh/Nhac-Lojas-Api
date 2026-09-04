@@ -8,7 +8,7 @@ import java.time.DayOfWeek;
 import java.time.LocalTime;
 
 @Entity
-@Table(name = "tb_horario_funcionamento")
+//@Table(name = "tb_horario_funcionamento")
 @Getter
 @Setter
 @AllArgsConstructor

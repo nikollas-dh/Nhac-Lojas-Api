@@ -22,7 +22,7 @@ public class UsuarioLojaController {
     private final UsuarioLojaService service;
 
     @PostMapping
-    public ResponseEntity<UsuarioLoja> Cadastrar(@RequestBody @Valid CadastroUsuarioLojaDto dto){
+    public ResponseEntity<CadastroUsuarioLojaResponseDto> Cadastrar(@RequestBody @Valid CadastroUsuarioLojaDto dto){
         UsuarioLoja us = service.cadastrar(dto);
 
         var response = new CadastroUsuarioLojaResponseDto(
@@ -30,6 +30,6 @@ public class UsuarioLojaController {
                 us.getEmail(),
                 us.getRoleUser()
         );
-        return ResponseEntity.status(HttpStatus.CREATED).body(us);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }

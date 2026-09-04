@@ -17,16 +17,9 @@ public class Loja {
     @Id
     private String id;
 
-    @OneToOne(cascade = CascadeType.ALL)
     private String nome;
-
-    @OneToOne(cascade = CascadeType.ALL)
     private String descricao;
-
-    @OneToOne(cascade = CascadeType.ALL)
     private String categoria;
-
-    @OneToOne(cascade = CascadeType.ALL)
     private String imagemUrl;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -38,7 +31,7 @@ public class Loja {
     @OneToOne(cascade = CascadeType.ALL)
     private GeoLocalizacao geoLocalizacao;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @Embedded
     private List<HorariosFuncionamento> horariosFuncionamento;
 
 }
